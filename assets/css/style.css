@@ -1,0 +1,112 @@
+/* BOQ-CAD Custom Styles */
+:root {
+    --primary: #1e40af;
+    --accent: #f59e0b;
+}
+
+body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+
+.card-hover {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.canvas-wrapper {
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8fafc;
+    position: relative;
+}
+
+#fabric-canvas {
+    display: block;
+    max-width: 100%;
+}
+
+.toolbar-btn {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.toolbar-btn:hover, .toolbar-btn.active {
+    background: #1e40af;
+    color: white;
+    border-color: #1e40af;
+}
+
+.boq-table th {
+    background: #1e40af;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+.boq-table td { font-size: 0.9rem; }
+.boq-table .category-row {
+    background: #f1f5f9;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.price-badge {
+    background: #ecfdf5;
+    color: #065f46;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.auth-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
+    min-height: 100vh;
+}
+
+.auth-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+}
+
+.room-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    margin: 2px;
+}
+
+.progress-ring {
+    transition: stroke-dashoffset 0.5s;
+}
+
+/* Print styles for BOQ */
+@media print {
+    nav, footer, .no-print { display: none !important; }
+    body { background: white; }
+    .container { max-width: 100%; }
+}

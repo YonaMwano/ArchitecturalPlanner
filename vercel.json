@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "*.php",
+      "use": "vercel-php@0.7.3"
+    },
+    {
+      "src": "api/**/*.php",
+      "use": "vercel-php@0.7.3"
+    },
+    {
+      "src": "includes/**/*.php",
+      "use": "vercel-php@0.7.3"
+    },
+    {
+      "src": "assets/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)\\.php",
+      "dest": "/$1.php"
+    },
+    {
+      "src": "/",
+      "dest": "/index.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1.php"
+    }
+  ],
+  "env": {
+    "DB_HOST": "@db_host",
+    "DB_NAME": "@db_name",
+    "DB_USER": "@db_user",
+    "DB_PASS": "@db_pass"
+  }
+}

@@ -1,0 +1,47 @@
+# BOQ-CAD Tanzania — Runtime requirements
+# This is a PHP + MySQL application (not Python).
+# Keep this file for deployment documentation / platform checklists.
+
+# --- Server runtime ---
+PHP>=8.0
+php-pdo
+php-pdo_mysql
+php-mbstring
+php-json
+php-session
+php-filter
+
+# --- Database ---
+MySQL>=5.7
+# or MariaDB>=10.3
+# Import: sql/schema.sql
+
+# --- PHP extensions required ---
+ext-pdo
+ext-pdo_mysql
+ext-json
+ext-mbstring
+
+# --- Optional for production ---
+# HTTPS / SSL certificate
+# External managed MySQL (required on Vercel — no local MySQL)
+# Examples: PlanetScale, Railway, Aiven, Amazon RDS, DigitalOcean Managed MySQL
+
+# --- Frontend (CDN — no install) ---
+# Tailwind CSS (cdn.tailwindcss.com)
+# Bootstrap 5.3
+# Fabric.js 5.3
+# Three.js r128
+# Font Awesome 6
+# jQuery 3.7
+
+# --- Local XAMPP / development ---
+# Apache or Nginx
+# MySQL running on localhost
+# Configure includes/config.php with DB credentials
+
+# --- Vercel notes ---
+# 1. Set environment variables: DB_HOST, DB_NAME, DB_USER, DB_PASS
+# 2. Point DB_HOST to a public MySQL host (Vercel serverless cannot run MySQL locally)
+# 3. Deploy with: vercel --prod
+# 4. Runtime: vercel-php (see vercel.json)
